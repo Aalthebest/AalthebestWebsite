@@ -1,0 +1,119 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import AgeGate from '../components/AgeGate.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Aal The Best — Wholesale importer of Scotch whisky and Ukrainian spirits for the Norwegian market.' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{title} — Aal The Best</title>
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <style is:global>
+      /* ── Scroll-triggered animations ── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.75s ease, transform 0.75s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-left {
+        opacity: 0;
+        transform: translateX(-28px);
+        transition: opacity 0.75s ease, transform 0.75s ease;
+      }
+      .reveal-left.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .reveal-right {
+        opacity: 0;
+        transform: translateX(28px);
+        transition: opacity 0.75s ease, transform 0.75s ease;
+      }
+      .reveal-right.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .delay-100 { transition-delay: 100ms; }
+      .delay-200 { transition-delay: 200ms; }
+      .delay-300 { transition-delay: 300ms; }
+      .delay-400 { transition-delay: 400ms; }
+      .delay-500 { transition-delay: 500ms; }
+
+      /* ── Grain overlay ── */
+      body::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0.032;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        background-size: 200px 200px;
+      }
+
+      /* ── Smooth scroll ── */
+      html { scroll-behavior: smooth; }
+
+      /* ── Selection color ── */
+      ::selection { background: #1a5bbf22; }
+
+      /* ── Horizontal rule ── */
+      .rule-amber {
+        display: block;
+        width: 3rem;
+        height: 2px;
+        background: #c4862c;
+        border: none;
+        margin: 0;
+      }
+      .rule-blue {
+        display: block;
+        width: 3rem;
+        height: 2px;
+        background: #1a5bbf;
+        border: none;
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body class="bg-cream text-body font-sans antialiased">
+    <AgeGate />
+    <Nav />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+
+    <script>
+      // Scroll reveal
+      const observer = new IntersectionObserver(
+        (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+        { threshold: 0.12 }
+      );
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
+        .forEach(el => observer.observe(el));
+    </script>
+  </body>
+</html>

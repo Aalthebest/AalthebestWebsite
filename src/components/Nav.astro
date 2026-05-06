@@ -1,0 +1,106 @@
+---
+const base = import.meta.env.BASE_URL;
+const links = [
+  { href: `${base}`,         label: 'Home'     },
+  { href: `${base}products`, label: 'Products' },
+  { href: `${base}about`,    label: 'About Us' },
+  { href: `${base}contact`,  label: 'Contact'  },
+];
+---
+
+<header id="site-nav"
+  class="fixed top-0 left-0 right-0 z-[100] transition-all duration-500"
+  style="background: transparent;">
+
+  <div class="mx-auto max-w-7xl px-6 sm:px-10 h-20 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href={`${base}`}
+      class="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue rounded-sm">
+      <img src="/logo/logo-icon.png" alt="" class="h-9 w-auto transition-opacity duration-300" />
+      <span id="nav-wordmark" class="font-display font-semibold text-2xl leading-none tracking-tight text-white transition-colors duration-300">
+        Aal The Best
+      </span>
+    </a>
+
+    <!-- Desktop links -->
+    <nav class="hidden md:flex items-center gap-1">
+      {links.map(({ href, label }) => (
+        <a href={href}
+          class="nav-link px-4 py-2 font-sans text-sm font-medium text-white/75 rounded-sm
+                 hover:text-white transition-colors duration-200
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue">
+          {label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Mobile toggle -->
+    <button id="nav-toggle"
+      class="md:hidden p-2 text-white/70 hover:text-white transition-colors duration-200"
+      aria-label="Menu" aria-expanded="false">
+      <svg id="ico-open" width="22" height="22" viewBox="0 0 22 22" fill="currentColor">
+        <rect y="4" width="22" height="2" rx="1"/>
+        <rect y="10" width="22" height="2" rx="1"/>
+        <rect y="16" width="22" height="2" rx="1"/>
+      </svg>
+      <svg id="ico-close" width="22" height="22" viewBox="0 0 22 22" fill="none" class="hidden">
+        <path d="M4 4l14 14M18 4L4 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="nav-mobile" class="hidden md:hidden bg-midnight border-t border-dark-border">
+    <div class="mx-auto max-w-7xl px-6 py-5 flex flex-col gap-1">
+      {links.map(({ href, label }) => (
+        <a href={href}
+          class="px-3 py-3.5 text-sm font-medium text-white/70 rounded-sm hover:text-white hover:bg-white/6
+                 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue">
+          {label}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  const nav     = document.getElementById('site-nav')!;
+  const wm      = document.getElementById('nav-wordmark')!;
+  const links   = nav.querySelectorAll<HTMLElement>('.nav-link');
+
+  function applyScroll() {
+    const scrolled = window.scrollY > 80;
+    if (scrolled) {
+      nav.style.background  = 'rgba(250,248,244,0.96)';
+      nav.style.backdropFilter = 'blur(12px)';
+      nav.style.borderBottom   = '1px solid #ddd7cb';
+      nav.style.boxShadow      = '0 2px 16px rgba(0,0,0,0.06)';
+      wm.style.color = '#1a5bbf';
+      links.forEach(l => l.style.color = '#3d3a48');
+    } else {
+      nav.style.background  = 'transparent';
+      nav.style.backdropFilter = 'none';
+      nav.style.borderBottom   = 'none';
+      nav.style.boxShadow      = 'none';
+      wm.style.color = 'white';
+      links.forEach(l => l.style.color = 'rgba(255,255,255,0.75)');
+    }
+  }
+
+  applyScroll();
+  window.addEventListener('scroll', applyScroll, { passive: true });
+
+  // Mobile toggle
+  const toggle = document.getElementById('nav-toggle')!;
+  const mobile = document.getElementById('nav-mobile')!;
+  const icoOpen  = document.getElementById('ico-open')!;
+  const icoClose = document.getElementById('ico-close')!;
+
+  toggle.addEventListener('click', () => {
+    const open = mobile.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(!open));
+    icoOpen.classList.toggle('hidden', !open);
+    icoClose.classList.toggle('hidden', open);
+  });
+</script>

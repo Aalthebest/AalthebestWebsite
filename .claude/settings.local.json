@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.vinmonopolet.no)",
+      "WebFetch(domain:www.theglenturret.com)"
+    ]
+  }
+}

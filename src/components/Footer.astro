@@ -1,0 +1,77 @@
+---
+const base = import.meta.env.BASE_URL;
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-midnight text-white/60">
+
+  <!-- Top section -->
+  <div class="mx-auto max-w-7xl px-6 sm:px-10 pt-16 pb-10 grid grid-cols-1 md:grid-cols-3 gap-10 border-b border-dark-border">
+
+    <div>
+      <div class="flex items-center gap-3 mb-5">
+        <img src="/logo/logo-icon.png" alt="Aal The Best" class="h-8 w-auto" />
+        <span class="font-display font-semibold text-white text-base">Aal The Best</span>
+      </div>
+      <p class="text-sm leading-relaxed mb-4">
+        Wholesale importer of premium Scotch whisky and Ukrainian spirits for the Norwegian market.
+      </p>
+      <p class="font-mono text-2xs tracking-wide text-white/30 uppercase">3570 Ål, Norway</p>
+    </div>
+
+    <div>
+      <p class="font-mono text-2xs tracking-caps uppercase text-blue-pale mb-5">Navigation</p>
+      <ul class="space-y-3 text-sm">
+        {[
+          { href: `${base}`,         label: 'Home'     },
+          { href: `${base}products`, label: 'Products' },
+          { href: `${base}about`,    label: 'About Us' },
+          { href: `${base}contact`,  label: 'Contact'  },
+        ].map(({ href, label }) => (
+          <li>
+            <a href={href} class="hover:text-white transition-colors duration-150
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue rounded-sm">
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <p class="font-mono text-2xs tracking-caps uppercase text-blue-pale mb-5">Contact</p>
+      <address class="not-italic text-sm space-y-2 leading-relaxed">
+        <p>Aalthebest AS</p>
+        <p>3570 Ål, Norge</p>
+        <p class="pt-1">
+          <a href="mailto:haf@aalthebest.com"
+            class="text-blue-pale hover:text-white transition-colors duration-150
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue rounded-sm">
+            haf@aalthebest.com
+          </a>
+        </p>
+      </address>
+    </div>
+
+  </div>
+
+  <!-- Brand logos -->
+  <div class="mx-auto max-w-7xl px-6 sm:px-10 py-8 flex flex-wrap items-center gap-10 border-b border-dark-border">
+    <p class="font-mono text-2xs tracking-caps uppercase text-blue-pale/60 shrink-0">Our brands</p>
+    <img src="/Glenturret/Glenturret_Header_logo.svg" alt="The Glenturret"
+      class="h-7 w-auto opacity-30 hover:opacity-65 transition-opacity duration-300"
+      style="filter: invert(1);" />
+    <img src="/Hetman/Logo-hetman.png" alt="Hetman Vodka"
+      class="h-11 w-auto opacity-30 hover:opacity-65 transition-opacity duration-300" />
+  </div>
+
+  <!-- Legal -->
+  <div class="mx-auto max-w-7xl px-6 sm:px-10 py-8 flex flex-col sm:flex-row sm:items-center gap-4 justify-between">
+    <p class="text-xs text-white/30 leading-relaxed max-w-2xl">
+      Alkohol kan være helseskadelig. Drikk med måte. Aldersgrense 20 år for brennevin i Norge. —
+      This website is a trade information resource and does not constitute advertising under Alkoholloven §&nbsp;9-2.
+    </p>
+    <p class="text-xs text-white/20 shrink-0">&copy; {year} Aal The Best</p>
+  </div>
+
+</footer>

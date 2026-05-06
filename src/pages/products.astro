@@ -1,0 +1,228 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+
+const glenturret = [
+  { short: '7 Year Peat Smoked Whisky',       abv: '46%',   vol: '70 cl', img: '/Glenturret/Glenturret_7YO_Peat_Smoked.png',
+    price: 'kr 991,80',   vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-7-YO-Peat-Smoke-Single-Malt-Whisky-2025/p/19920901',
+    taste: 'Sweet vanilla leads to citrus fruits and peat smoke. Ginger and nutmeg follow with glimpses of sea salt and maturing oak, giving way to a lingering, softly peated finish.' },
+  { short: '10 Year Peat Smoked Whisky',      abv: '40.4%', vol: '70 cl', img: '/Glenturret/Glenturret_10YO_Peat_Smoked.png',
+    price: 'kr 1 150,80', vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-10-YO-Single-Malt-Scotch-Whisky/p/19921101',
+    taste: 'Aromatic dried apple and citrus fruits. Peat smoke mingles with vanilla, sweet fruit and darker smoke, with a hint of brine, giving way to a warm, embracing finish.' },
+  { short: '12 Year Single Malt Whisky',      abv: '40.2%', vol: '70 cl', img: '/Glenturret/Glenturret_12YO.png',
+    price: 'kr 1 200,80', vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-12-YO-Single-Malt-Scotch-Whisky/p/19921001',
+    taste: 'Caramelised citrus fruits with light vanilla and cinnamon, and dried fruits. Soft wood spices, ginger, nutmeg and toasted oak lead to a warm, lingering finish.' },
+  { short: '15 Year Single Malt Whisky',      abv: '40.5%', vol: '70 cl', img: '/Glenturret/Glenturret_15YO.png',
+    price: 'kr 2 172,00', vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-15-YO-Single-Malt-Scotch-Whisky-2025/p/19921201',
+    taste: 'Heather honey and ripening citrus fruits with vanilla and cinnamon. Figs and dates, hints of warm baked fruit cake and dried heather flowers, give way to soft oak.' },
+  { short: 'Triple Wood Single Malt Whisky',  abv: '45%',   vol: '70 cl', img: '/Glenturret/Glenturret_Triple_Wood.png',
+    price: 'kr 950,00',   vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-Triple-Wood-Highland-Single-Malt-Scotch-Whisky-2025/p/19921301',
+    taste: 'Vanilla and toffee apple, barley sugar with hints of malt and light oak. Cinnamon alongside sticky ginger cake, light fruits and gentle wood spice deliver a soft finish.' },
+];
+
+const hetman = [
+  { short: 'Premium',         abv: '40%', vol: '70 cl', img: '/Hetman/Hetman_Premium.png',
+    price: 'kr 706,70', vmp: 'https://www.vinmonopolet.no/Land/Ukraina/Hetman-Premium-Quality-Vodka/p/20156401',
+    taste: 'Clean and neutral on the nose with a smooth, rounded texture on the palate. Light cereal notes with a gentle warmth and a short, clean finish.' },
+  { short: 'Ice',             abv: '40%', vol: '70 cl', img: '/Hetman/Hetman_Ice.png',
+    price: 'kr 546,50', vmp: 'https://www.vinmonopolet.no/Land/Ukraina/Hetman-Ice-Vodka/p/20154601',
+    taste: 'Very clean and crisp with a characteristically light, fresh character. Minimal sweetness on the palate and a short, clean finish with a faint cooling sensation.' },
+  { short: 'Ukrainian Grain', abv: '40%', vol: '70 cl', img: '/Hetman/Hetman_Ukrainian_Grain.png',
+    price: 'kr 539,90', vmp: 'https://www.vinmonopolet.no/Land/Ukraina/Hetman-Ukrainian-Grain/p/20154701',
+    taste: 'Soft grain character with light, natural sweetness on the nose. Clean and smooth on the palate with gentle cereal notes and a short, even finish.' },
+  { short: 'Gorilka Herbal',  abv: '38%', vol: '50 cl', img: '/Hetman/herbal.png',
+    price: null, vmp: null, blend: true,
+    taste: 'Herb-infused Ukrainian gorilka with aromatic botanicals. Warm spice and chamomile on the nose, a rounded herbal character on the palate, with a natural, gently bitter finish.' },
+  { short: 'Gorilka Citrus',  abv: '38%', vol: '50 cl', img: '/Hetman/citrus.png',
+    price: null, vmp: null, blend: true,
+    taste: 'Citrus-infused Ukrainian gorilka with fresh lemon and orange character. Bright and clean on the palate with natural citrus sweetness and a crisp, refreshing finish.' },
+];
+---
+
+<Layout title="Products">
+
+  <!-- ─── HERO ───────────────────────────────────── -->
+  <div class="relative pt-44 pb-24 overflow-hidden"
+    style="background: url('/Bakgrunner/brea.JPG') center / cover no-repeat;">
+    <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(13,17,24,0.70) 0%, rgba(13,17,24,0.88) 100%);"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-6 sm:px-10">
+      <div class="inline-block rounded-sm px-8 py-8 -mx-8"
+        style="backdrop-filter: blur(14px); background: rgba(13,17,24,0.28);">
+        <p class="font-mono text-2xs tracking-caps uppercase text-white/40 mb-5">Product Range</p>
+        <h1 class="font-display font-semibold text-white leading-display mb-5"
+          style="font-size: clamp(3rem, 6vw, 6rem);">
+          Our Spirits<br/><em class="font-light italic text-amber-light">Portfolio</em>
+        </h1>
+        <p class="text-lg text-white/60 max-w-xl leading-body">
+          Ten expressions across two brands and two countries.
+          Tasting notes sourced directly from the producers.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── GLENTURRET ─────────────────────────────── -->
+  <section id="glenturret" class="bg-cream pt-20 sm:pt-28 pb-16">
+    <div class="mx-auto max-w-7xl px-6 sm:px-10">
+
+      <!-- Section label -->
+      <div class="mb-16 pb-10 border-b border-warm-border reveal">
+        <div class="flex items-center gap-4 mb-8">
+          <span class="rule-blue shrink-0"></span>
+          <p class="font-mono text-xs tracking-[0.14em] uppercase text-muted">Scotland — Highlands, est. 1763</p>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-8">
+          <img src="/Glenturret/Glenturret_Header_logo.svg" alt="The Glenturret"
+            class="h-20 w-auto shrink-0" />
+          <p class="text-base text-body leading-body">
+            Highland Single Malt Scotch Whisky — five expressions from Scotland's oldest working distillery.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottle grid — 3 per row -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {glenturret.map((p, i) => (
+          <article class={`group bg-paper border border-warm-border rounded-sm overflow-hidden hover:shadow-card-up transition-all duration-400 flex flex-col reveal delay-${i * 100}`}>
+
+            <!-- Bottle -->
+            <div class="flex items-end justify-center px-8 pt-12 pb-0 bg-warm relative overflow-hidden"
+              style="min-height: 340px;">
+              <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-28 h-28 rounded-full opacity-30 pointer-events-none"
+                style="background: radial-gradient(circle, #c4862c55, transparent 70%); filter: blur(22px);"></div>
+              <img src={p.img} alt={p.short}
+                class="relative z-10 w-auto object-contain transition-transform duration-500 ease-spring group-hover:scale-105 group-hover:-translate-y-3"
+                style="height: clamp(260px, 28vw, 330px); filter: drop-shadow(0 24px 44px rgba(0,0,0,0.18)) drop-shadow(0 8px 14px rgba(0,0,0,0.10));" />
+            </div>
+
+            <!-- Info -->
+            <div class="p-7 flex flex-col flex-1 border-t border-warm-border">
+              <div class="flex items-start justify-between gap-3 mb-1">
+                <h3 class="font-display text-xl font-semibold text-charcoal leading-tight">{p.short}</h3>
+                <span class="shrink-0 font-mono text-2xs tracking-wide text-blue bg-blue-soft border border-blue/15 px-2 py-1 rounded-sm mt-1">
+                  {p.abv}
+                </span>
+              </div>
+              <p class="font-mono text-2xs tracking-wide text-muted mb-5 uppercase">{p.vol}</p>
+              <div class="mt-auto pt-5 border-t border-warm-border/60">
+                <p class="font-mono text-2xs tracking-caps uppercase text-muted mb-2">Tasting notes</p>
+                <p class="text-sm text-body leading-relaxed mb-5">{p.taste}</p>
+                <div class="flex items-center justify-between gap-3 pt-4 border-t border-warm-border/60">
+                  <span class="font-sans text-base font-bold text-charcoal tracking-tight whitespace-nowrap">{p.price}</span>
+                  <a href={p.vmp} target="_blank" rel="noopener noreferrer"
+                    class="shrink-0 inline-flex items-center gap-2 px-4 py-2.5 bg-[#c8102e] text-white font-mono text-2xs tracking-wide uppercase rounded-sm
+                           hover:bg-[#a50d25] transition-colors duration-150
+                           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c8102e]">
+                    Vinmonopolet
+                    <svg width="11" height="11" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                      <path d="M2 8L8 2M8 2H4M8 2v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── HETMAN ─────────────────────────────────── -->
+  <section id="hetman" class="bg-cream py-20 sm:py-28">
+    <div class="mx-auto max-w-7xl px-6 sm:px-10">
+
+      <!-- Section label -->
+      <div class="mb-16 pb-10 border-b border-warm-border reveal">
+        <div class="flex items-center gap-4 mb-8">
+          <span class="rule-blue shrink-0"></span>
+          <p class="font-mono text-xs tracking-[0.14em] uppercase text-muted">Ukraine — Zaporozhian Heritage, est. 1782</p>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-8">
+          <img src="/Hetman/Logo-hetman.png" alt="Hetman Vodka"
+            class="h-40 w-auto shrink-0" style="filter: invert(1);" />
+          <p class="text-base text-body leading-body">
+            Ukrainian grain spirits — three expressions built on a Cossack heritage dating to 1782.
+          </p>
+        </div>
+      </div>
+
+      <!-- Hetman — 3 large cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {hetman.map((p, i) => (
+          <article class={`group bg-paper border border-warm-border rounded-sm overflow-hidden hover:shadow-card-up transition-all duration-400 flex flex-col reveal delay-${i * 150}`}>
+
+            <!-- Bottle — very tall display -->
+            <div class="flex items-end justify-center px-8 pt-12 pb-0 bg-warm relative overflow-hidden"
+              style="min-height: 380px;">
+              <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full opacity-20 pointer-events-none"
+                style="background: radial-gradient(circle, #1a5bbf, transparent 70%); filter: blur(24px);"></div>
+              {p.blend ? (
+                <div class="relative z-10 flex items-end justify-center transition-transform duration-500 ease-spring group-hover:scale-105 group-hover:-translate-y-3"
+                  style="height: clamp(320px, 34vw, 400px);">
+                  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 pointer-events-none"
+                    style="height: 32px; background: rgba(0,0,0,0.20); filter: blur(18px); border-radius: 50%;"></div>
+                  <img src={p.img} alt={p.short}
+                    class="w-auto h-full object-contain relative z-10"
+                    style="mix-blend-mode: multiply;" />
+                </div>
+              ) : (
+                <img src={p.img} alt={p.short}
+                  class="relative z-10 w-auto object-contain transition-transform duration-500 ease-spring group-hover:scale-105 group-hover:-translate-y-3"
+                  style="height: clamp(280px, 30vw, 360px); filter: drop-shadow(0 24px 44px rgba(0,0,0,0.18)) drop-shadow(0 8px 14px rgba(0,0,0,0.10));" />
+              )}
+            </div>
+
+            <div class="p-7 flex flex-col flex-1 border-t border-warm-border">
+              <div class="flex items-start justify-between gap-3 mb-1">
+                <h3 class="font-display text-2xl font-semibold text-charcoal leading-tight">{p.short}</h3>
+                <span class="shrink-0 font-mono text-2xs tracking-wide text-blue bg-blue-soft border border-blue/15 px-2 py-1 rounded-sm mt-1">
+                  {p.abv} ABV
+                </span>
+              </div>
+              <p class="font-mono text-2xs tracking-wide text-muted uppercase">{p.vol}</p>
+              <div class="mt-auto pt-5 border-t border-warm-border/60">
+                <p class="font-mono text-2xs tracking-caps uppercase text-muted mb-2">Tasting notes</p>
+                <p class="text-sm text-body leading-relaxed mb-5">{p.taste}</p>
+                {p.vmp && (
+                  <div class="flex items-center justify-between gap-3 pt-4 border-t border-warm-border/60">
+                    <span class="font-sans text-lg font-bold text-charcoal tracking-tight whitespace-nowrap">{p.price}</span>
+                    <a href={p.vmp} target="_blank" rel="noopener noreferrer"
+                      class="shrink-0 inline-flex items-center gap-2 px-4 py-2.5 bg-[#c8102e] text-white font-mono text-2xs tracking-wide uppercase rounded-sm
+                             hover:bg-[#a50d25] transition-colors duration-150
+                             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c8102e]">
+                      Vinmonopolet
+                      <svg width="11" height="11" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                        <path d="M2 8L8 2M8 2H4M8 2v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </a>
+                  </div>
+                )}
+              </div>
+            </div>
+
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── CTA ────────────────────────────────────── -->
+  <section class="bg-warm border-t border-warm-border py-16 sm:py-20">
+    <div class="mx-auto max-w-7xl px-6 sm:px-10 flex flex-col sm:flex-row sm:items-center gap-8 justify-between reveal">
+      <div>
+        <h3 class="font-display text-2xl sm:text-3xl font-semibold text-charcoal mb-2">Request the full catalogue</h3>
+        <p class="text-base text-body">Pricing, minimum orders, and spec sheets for trade accounts.</p>
+      </div>
+      <a href={`${base}contact`}
+        class="shrink-0 px-9 py-4 bg-charcoal text-cream font-semibold text-sm rounded-sm tracking-wide
+               hover:bg-body active:bg-midnight transition-colors duration-200
+               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+</Layout>

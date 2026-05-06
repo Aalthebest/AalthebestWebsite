@@ -1,0 +1,60 @@
+---
+---
+
+<div id="age-gate" class="fixed inset-0 z-[200] flex items-center justify-center p-4"
+  style="background: rgba(13,17,24,0.96); backdrop-filter: blur(10px);">
+
+  <div class="w-full max-w-sm bg-midnight rounded-sm overflow-hidden shadow-[0_40px_120px_rgba(26,91,191,0.25),0_20px_60px_rgba(0,0,0,0.7)] border border-blue/30">
+
+    <!-- Logo section — light surface so natural logo colors show -->
+    <div class="px-8 text-center border-b border-dark-border overflow-hidden">
+      <img src="/logo/logo-full.png" alt="Aal The Best"
+        class="w-full max-w-xs mx-auto block"
+        style="margin-top: -10%; margin-bottom: -25%;" />
+    </div>
+
+    <!-- Body -->
+    <div class="px-8 py-8">
+      <h2 class="font-display text-2xl font-semibold text-white mb-4 leading-snug">
+        Age verification
+      </h2>
+      <p class="text-sm text-white/70 leading-relaxed mb-2">
+        You must be <strong class="text-white">20 years of age or older</strong> to enter this website.
+      </p>
+      <p class="text-xs text-white/40 mb-8 leading-relaxed">
+        Aldersgrense 20 år. Dette nettstedet omhandler alkohol.
+      </p>
+
+      <div class="flex flex-col gap-3">
+        <button id="age-confirm"
+          class="w-full py-3.5 bg-blue text-white text-sm font-semibold rounded-sm tracking-wide
+                 hover:bg-blue-mid active:bg-blue-dim transition-colors duration-200
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue">
+          I am 20 or older — Enter
+        </button>
+        <button id="age-deny"
+          class="w-full py-3.5 border border-dark-border text-white/50 text-sm rounded-sm
+                 hover:border-white/30 hover:text-white/70 transition-colors duration-200
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20">
+          I am under 20 — Exit
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const gate = document.getElementById('age-gate') as HTMLElement;
+  if (sessionStorage.getItem('atb-confirmed') === '1') gate.style.display = 'none';
+
+  document.getElementById('age-confirm')?.addEventListener('click', () => {
+    sessionStorage.setItem('atb-confirmed', '1');
+    gate.style.transition = 'opacity 0.4s ease';
+    gate.style.opacity = '0';
+    setTimeout(() => gate.remove(), 420);
+  });
+  document.getElementById('age-deny')?.addEventListener('click', () => {
+    window.location.href = 'https://www.who.int/health-topics/alcohol';
+  });
+</script>

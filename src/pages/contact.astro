@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact">
+
+  <!-- Hero -->
+  <div class="relative pt-44 pb-24 overflow-hidden"
+    style="background: url('/Bakgrunner/gullrekka%20lett%20sn%C3%B8.JPG') center / cover no-repeat;">
+    <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(13,17,24,0.65) 0%, rgba(13,17,24,0.90) 100%);"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-6 sm:px-10">
+      <div class="inline-block rounded-sm px-8 py-8 -mx-8"
+        style="backdrop-filter: blur(14px); background: rgba(13,17,24,0.28);">
+        <p class="font-mono text-2xs tracking-caps uppercase text-white/40 mb-5">Contact</p>
+        <h1 class="font-display font-semibold text-white leading-display mb-5"
+          style="font-size: clamp(3rem, 6vw, 6rem);">
+          Get in Touch
+        </h1>
+        <p class="text-lg text-white/60 max-w-lg leading-body">
+          For product enquiries, pricing, and order information.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form + details -->
+  <div class="bg-cream">
+    <div class="mx-auto max-w-7xl px-6 sm:px-10 py-20 sm:py-28">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+
+        <!-- Form -->
+        <div class="lg:col-span-2 reveal">
+          <span class="rule-blue mb-8 block"></span>
+          <form name="trade-enquiry" method="POST" class="space-y-6" novalidate>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="name" class="block font-mono text-2xs tracking-caps uppercase text-muted mb-2">Contact Name</label>
+                <input id="name" name="name" type="text" required autocomplete="name"
+                  class="w-full px-4 py-3.5 bg-paper border border-warm-border rounded-sm text-base text-charcoal placeholder-muted/50
+                         focus:outline-none focus:border-blue focus:ring-2 focus:ring-blue/12
+                         hover:border-body/40 transition-colors duration-150"
+                  placeholder="Your name" />
+              </div>
+              <div>
+                <label for="company" class="block font-mono text-2xs tracking-caps uppercase text-muted mb-2">Business Name</label>
+                <input id="company" name="company" type="text" required
+                  class="w-full px-4 py-3.5 bg-paper border border-warm-border rounded-sm text-base text-charcoal placeholder-muted/50
+                         focus:outline-none focus:border-blue focus:ring-2 focus:ring-blue/12
+                         hover:border-body/40 transition-colors duration-150"
+                  placeholder="Your business" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="email" class="block font-mono text-2xs tracking-caps uppercase text-muted mb-2">Email Address</label>
+                <input id="email" name="email" type="email" required autocomplete="email"
+                  class="w-full px-4 py-3.5 bg-paper border border-warm-border rounded-sm text-base text-charcoal placeholder-muted/50
+                         focus:outline-none focus:border-blue focus:ring-2 focus:ring-blue/12
+                         hover:border-body/40 transition-colors duration-150"
+                  placeholder="you@business.no" />
+              </div>
+              <div>
+                <label for="enquiry-type" class="block font-mono text-2xs tracking-caps uppercase text-muted mb-2">Enquiry Type</label>
+                <select id="enquiry-type" name="enquiry-type"
+                  class="w-full px-4 py-3.5 bg-paper border border-warm-border rounded-sm text-base text-charcoal
+                         focus:outline-none focus:border-blue focus:ring-2 focus:ring-blue/12
+                         hover:border-body/40 transition-colors duration-150 appearance-none">
+                  <option value="">Select a topic</option>
+                  <option value="new-account">Opening a trade account</option>
+                  <option value="product-info">Product information</option>
+                  <option value="pricing">Pricing and minimum orders</option>
+                  <option value="existing-order">Existing order</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="message" class="block font-mono text-2xs tracking-caps uppercase text-muted mb-2">Message</label>
+              <textarea id="message" name="message" required rows="6"
+                class="w-full px-4 py-3.5 bg-paper border border-warm-border rounded-sm text-base text-charcoal placeholder-muted/50
+                       focus:outline-none focus:border-blue focus:ring-2 focus:ring-blue/12
+                       hover:border-body/40 transition-colors duration-150 resize-y"
+                placeholder="Products of interest, volumes, questions..."></textarea>
+            </div>
+
+            <div class="pt-2">
+              <button type="submit"
+                class="px-10 py-4 bg-charcoal text-cream font-semibold text-sm rounded-sm tracking-wide
+                       hover:bg-body active:bg-midnight transition-colors duration-200
+                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal">
+                Send Message
+              </button>
+              <p class="mt-4 font-mono text-2xs tracking-wide text-muted">We respond within 2 business days.</p>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Contact details -->
+        <div class="space-y-6">
+
+          <div class="bg-paper rounded-sm border border-warm-border shadow-card p-7 reveal delay-200">
+            <p class="font-mono text-2xs tracking-caps uppercase text-blue mb-6">Contact</p>
+            <address class="not-italic space-y-6">
+              <div>
+                <p class="font-mono text-2xs tracking-wide uppercase text-muted mb-1">Office</p>
+                <p class="text-charcoal font-medium">Aalthebest AS</p>
+                <p class="text-body">Tanken Arena</p>
+                <p class="text-body">3570 Ål, Norge</p>
+              </div>
+              <div>
+                <p class="font-mono text-2xs tracking-wide uppercase text-muted mb-1">Email</p>
+                <a href="mailto:haf@aalthebest.com"
+                  class="text-blue font-medium hover:text-blue-mid transition-colors duration-150
+                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue rounded-sm">
+                  haf@aalthebest.com
+                </a>
+              </div>
+              <div>
+                <p class="font-mono text-2xs tracking-wide uppercase text-muted mb-1">Hours</p>
+                <p class="text-body">Monday–Friday</p>
+                <p class="text-body">09:00–16:00 CET</p>
+              </div>
+            </address>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</Layout>

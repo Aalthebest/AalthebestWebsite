@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="About Us">
+
+  <!-- Hero -->
+  <div class="relative pt-44 pb-24 overflow-hidden"
+    style="background: url('/Bakgrunner/reinsbotnan.jpg') center / cover no-repeat;">
+    <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(13,17,24,0.55) 0%, rgba(13,17,24,0.85) 100%);"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 flex flex-col sm:flex-row sm:items-end gap-12">
+      <div class="flex-1 inline-block rounded-sm px-8 py-8 -mx-8"
+        style="backdrop-filter: blur(14px); background: rgba(13,17,24,0.28);">
+        <p class="font-mono text-2xs tracking-caps uppercase text-white/40 mb-5">About</p>
+        <h1 class="font-display font-semibold text-white leading-display mb-4 flex items-center gap-5"
+          style="font-size: clamp(3rem, 6vw, 6rem);">
+          Aal The Best
+          <img src="/logo/logo-icon.png" alt="" class="h-16 sm:h-20 w-auto opacity-90 shrink-0" />
+        </h1>
+        <p class="text-lg text-white/60">3570 Ål, Norway — Wholesale spirits importer</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="bg-cream">
+    <div class="mx-auto max-w-7xl px-6 sm:px-10 py-20 sm:py-28">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+
+        <!-- Main text -->
+        <div class="lg:col-span-2 space-y-16">
+
+          <div class="reveal">
+            <span class="rule-blue mb-6 block"></span>
+            <h2 class="font-display text-3xl sm:text-4xl font-semibold text-charcoal leading-display mb-6">Who we are</h2>
+            <div class="space-y-4 text-base text-body leading-body">
+              <p>Aal The Best is a Norwegian wholesale importer based in Ål, in the Numedal valley. We source directly from distilleries and producers in Scotland and Ukraine.</p>
+              <p>Our name reflects both the town of Ål where we are rooted, and our ambition — to bring the best of two great spirit traditions to the Norwegian market.</p>
+            </div>
+          </div>
+
+          <!-- Glenturret -->
+          <div class="reveal">
+            <div class="rounded-sm overflow-hidden border border-warm-border shadow-card">
+              <div class="relative h-52 sm:h-64"
+                style="background: url('/Glenturret/glenturret-distillery.jpg') center / cover no-repeat;">
+                <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(13,17,24,0.08) 0%, rgba(13,17,24,0.78) 100%);"></div>
+                <div class="absolute bottom-6 left-7">
+                  <img src="/Glenturret/Glenturret_Header_logo.svg" alt="The Glenturret" class="h-14 w-auto" style="filter: invert(1);" />
+                </div>
+              </div>
+              <div class="bg-paper p-7">
+                <p class="font-mono text-2xs tracking-caps uppercase text-blue mb-3">Scotland — Highlands, est. 1763</p>
+                <h3 class="font-display text-2xl font-semibold text-charcoal mb-4">Scotland's oldest working distillery</h3>
+                <div class="space-y-3 text-base text-body leading-body">
+                  <p>The Glenturret has been distilling at Crieff, Perthshire since 1763 — the oldest continuously operating distillery in Scotland. Their Highland Single Malt is made in copper pot stills using water from the Turret burn.</p>
+                  <p>We import their full five-expression current portfolio, certified under the Scotch Whisky Regulations 2009.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hetman -->
+          <div class="reveal">
+            <div class="rounded-sm overflow-hidden border border-warm-border shadow-card">
+              <div class="relative h-52 sm:h-64"
+                style="background: url('/Bakgrunner/ff590131-4306-48dc-a592-645e2b783306.jpg') center / cover no-repeat;">
+                <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(13,17,24,0.10) 0%, rgba(13,17,24,0.80) 100%);"></div>
+                <div class="absolute bottom-6 left-7">
+                  <img src="/Hetman/Logo-hetman.png" alt="Hetman Vodka" class="h-24 w-auto" />
+                </div>
+              </div>
+              <div class="bg-paper p-7">
+                <p class="font-mono text-2xs tracking-caps uppercase text-blue mb-3">Ukraine — Zaporozhian Heritage, est. 1782</p>
+                <h3 class="font-display text-2xl font-semibold text-charcoal mb-4">Built on an empire founded in 1782</h3>
+                <div class="space-y-3 text-base text-body leading-body">
+                  <p>Hetman is Ukraine's first elite vodka brand, named after the supreme commander of the Zaporozhian Cossack state — a title and institution rooted in Ukrainian history since 1782. Produced from Ukrainian grain, certified for European export.</p>
+                  <p>We import five expressions: Hetman Premium, Hetman Ice, Hetman Ukrainian Grain, Gorilka Herbal, and Gorilka Citrus.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <span class="rule-blue mb-6 block"></span>
+            <h2 class="font-display text-2xl sm:text-3xl font-semibold text-charcoal mb-5">Regulatory note</h2>
+            <div class="space-y-4 text-base text-body leading-body">
+              <p>All import and distribution is conducted under Norwegian <em>Alkoholloven</em> and associated regulations, including the wholesale licence (<em>engrosbevillingen</em>).</p>
+              <p>This website is a trade information resource. It does not constitute advertising under <em>Alkoholloven §&nbsp;9-2</em>.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <div class="space-y-6">
+
+          <div class="bg-paper rounded-sm border border-warm-border shadow-card p-7 reveal">
+            <p class="font-mono text-2xs tracking-caps uppercase text-blue mb-6">Company Details</p>
+            <dl class="space-y-5">
+              {[
+                { label: 'Company',  value: 'Aalthebest AS'          },
+                { label: 'Org.nr.', value: '935 555 744'              },
+                { label: 'Location', value: '3570 Ål, Norway'         },
+                { label: 'Activity', value: 'Wholesale spirits import' },
+                { label: 'Licence',  value: 'Engrosbevillingen'        },
+              ].map(({ label, value }) => (
+                <div class="pb-4 border-b border-warm-border/60 last:border-0 last:pb-0">
+                  <dt class="font-mono text-2xs tracking-wide uppercase text-muted mb-1">{label}</dt>
+                  <dd class="text-base text-charcoal font-medium">{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <div class="bg-charcoal rounded-sm p-7 text-white reveal delay-200">
+            <p class="font-display text-xl font-semibold mb-3">Ready to stock us?</p>
+            <p class="text-sm text-white/65 leading-relaxed mb-6">
+              Contact us for pricing, minimum orders, and to discuss becoming a stockist.
+            </p>
+            <a href={`${base}contact`}
+              class="inline-flex w-full justify-center px-5 py-3 bg-cream text-charcoal font-semibold text-sm rounded-sm
+                     hover:bg-warm transition-colors duration-200
+                     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cream">
+              Get in Touch
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</Layout>

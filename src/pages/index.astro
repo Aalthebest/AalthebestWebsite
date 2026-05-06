@@ -1,0 +1,278 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Home">
+
+  <!-- ══════════════════════════════════════════════════════════
+       HERO — full-bleed mountain, editorial type
+  ══════════════════════════════════════════════════════════ -->
+  <section class="relative flex flex-col justify-end overflow-hidden"
+    style="min-height: 68vh; background: url('/Bakgrunner/brea.JPG') center 15% / cover no-repeat;">
+
+    <!-- Gradient overlay — dark bottom, atmospheric top -->
+    <div class="absolute inset-0"
+      style="background: linear-gradient(to bottom, rgba(13,17,24,0.28) 0%, rgba(13,17,24,0.15) 35%, rgba(13,17,24,0.78) 80%, rgba(13,17,24,0.95) 100%);"></div>
+
+    <!-- Content — anchored to bottom -->
+    <div class="relative z-10 mx-auto w-full max-w-7xl px-6 sm:px-10 pb-16 pt-32">
+      <div class="max-w-4xl inline-block rounded-sm px-8 py-8 -mx-8"
+        style="backdrop-filter: blur(14px); background: rgba(13,17,24,0.28);">
+
+        <!-- Label -->
+        <p class="font-mono text-xs tracking-wide text-white mb-6 reveal"
+          style="text-shadow: 0 1px 8px rgba(0,0,0,0.6);">
+          Aal The Best AS &nbsp;·&nbsp; 3570 Ål, Norway
+        </p>
+
+        <!-- Giant headline -->
+        <h1 class="font-display font-semibold text-white leading-display mb-8 reveal delay-100"
+          style="font-size: clamp(3.5rem, 8vw, 8rem);">
+          Scotland<br/>
+          <em class="font-light italic text-amber-light">&amp; Ukraine</em>
+        </h1>
+
+        <!-- Sub -->
+        <p class="text-lg sm:text-xl text-white/70 font-light leading-body max-w-lg mb-10 reveal delay-200">
+          Premium spirits — imported directly from distillery to the Norwegian trade.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4 reveal delay-300">
+          <a href={`${base}products`}
+            class="px-8 py-4 bg-white text-charcoal font-semibold text-sm rounded-sm
+                   hover:bg-cream active:bg-warm transition-colors duration-200
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
+            View Products
+          </a>
+          <a href={`${base}contact`}
+            class="px-8 py-4 border border-white/40 text-white font-medium text-sm rounded-sm
+                   hover:bg-white/10 hover:border-white/70 transition-colors duration-200
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logo — top right, floating -->
+    <div class="absolute top-24 right-8 sm:right-12 z-10 reveal delay-400">
+      <img src="/logo/logo-icon.png" alt="Aal The Best" class="h-16 sm:h-20 w-auto opacity-90 drop-shadow-[0_4px_24px_rgba(0,0,0,0.4)]" />
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="absolute bottom-8 right-10 sm:right-14 z-10 flex flex-col items-center gap-2 text-white/35">
+      <div class="h-12 w-px bg-gradient-to-b from-transparent to-white/50"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       INTRO — warm cream, typographic statement
+  ══════════════════════════════════════════════════════════ -->
+  <section class="bg-cream py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 sm:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+        <div class="reveal-left">
+          <span class="rule-blue mb-6 block"></span>
+          <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-charcoal leading-display">
+            Two nations.<br/>
+            <em class="font-light italic text-blue">One importer.</em>
+          </h2>
+        </div>
+
+        <div class="reveal-right">
+          <p class="text-lg text-body leading-body mb-6">
+            <strong class="text-charcoal font-semibold">Aal The Best AS</strong> is a Norwegian wholesale importer
+            based in Ål, Numedal. We source directly from Scotland's oldest working distillery and from
+            Ukraine's first elite vodka producer — bringing both to the Norwegian licensed trade.
+          </p>
+          <p class="text-base text-muted leading-body">
+            Two very different spirit traditions, each with centuries of craft behind them.
+            We let the products speak for themselves.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Quote -->
+      <div class="mt-16 pt-12 border-t border-warm-border text-center reveal">
+        <p class="font-display text-xl sm:text-2xl font-light italic text-charcoal/70 mx-auto whitespace-nowrap">
+          "From the highlands of Scotland and the plains of Ukraine — to Norway"
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       GLENTURRET — editorial two-panel
+  ══════════════════════════════════════════════════════════ -->
+  <section class="bg-paper py-0 overflow-hidden">
+
+    <!-- Full-bleed distillery photo -->
+    <div class="relative h-[55vw] min-h-[360px] max-h-[580px]"
+      style="background: url('/Glenturret/glenturret-distillery.jpg') center / cover no-repeat;">
+      <div class="absolute inset-0"
+        style="background: linear-gradient(to bottom, rgba(13,17,24,0.05) 0%, rgba(13,17,24,0.72) 100%);"></div>
+      <div class="absolute bottom-0 left-0 right-0 px-6 sm:px-10 pb-10 flex items-end justify-between max-w-7xl mx-auto">
+        <div class="reveal">
+          <p class="font-mono text-2xs tracking-caps uppercase text-white/75 mb-3">Scotland — Highlands, est. 1763</p>
+          <img src="/Glenturret/Glenturret_Header_logo.svg" alt="The Glenturret"
+            class="h-9 w-auto" style="filter: invert(1);" />
+        </div>
+        <a href={`${base}products#glenturret`}
+          class="reveal hidden sm:inline-flex items-center gap-2 text-sm font-medium text-white/85
+                 hover:text-white transition-colors duration-200 group">
+          View range
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" class="transition-transform duration-200 group-hover:translate-x-1">
+            <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Content + floating bottles -->
+    <div class="mx-auto max-w-7xl px-6 sm:px-10 py-16 sm:py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+
+      <div class="reveal">
+        <h2 class="font-display text-4xl sm:text-5xl font-semibold text-charcoal leading-display mb-6">
+          Scotland's oldest<br/>working distillery
+        </h2>
+        <p class="text-base text-body leading-body mb-5">
+          The Glenturret has been distilling at Crieff, Perthshire since 1763. Their Highland Single
+          Malt Scotch whiskies are made in copper pot stills, with water from the Turret burn —
+          one of the purest sources in the Scottish Highlands.
+        </p>
+        <p class="text-base text-body leading-body mb-8">
+          We import their full five-expression range: two peat-smoked releases at 7 and 10 years,
+          two aged expressions at 12 and 15 years, and the Triple Wood.
+        </p>
+        <a href={`${base}products#glenturret`}
+          class="inline-flex items-center gap-2 text-sm font-semibold text-blue
+                 hover:text-blue-mid transition-colors duration-200 group
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue rounded-sm">
+          Explore all five expressions
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" class="transition-transform duration-200 group-hover:translate-x-1">
+            <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Bottles — floating display -->
+      <div class="flex items-end justify-center sm:justify-end gap-2 sm:gap-4 reveal delay-200">
+        <img src="/Glenturret/Glenturret_7YO_Peat_Smoked.png" alt="Glenturret 7YO"
+          class="w-auto object-contain hover:scale-105 hover:-translate-y-2 transition-transform duration-500 ease-spring"
+          style="height: clamp(200px, 28vw, 300px); filter: drop-shadow(0 24px 40px rgba(0,0,0,0.18)) drop-shadow(0 8px 12px rgba(0,0,0,0.10));" />
+        <img src="/Glenturret/Glenturret_12YO.png" alt="Glenturret 12YO"
+          class="w-auto object-contain hover:scale-105 hover:-translate-y-2 transition-transform duration-500 ease-spring"
+          style="height: clamp(230px, 32vw, 340px); filter: drop-shadow(0 24px 40px rgba(0,0,0,0.18)) drop-shadow(0 8px 12px rgba(0,0,0,0.10));" />
+        <img src="/Glenturret/Glenturret_Triple_Wood.png" alt="Glenturret Triple Wood"
+          class="w-auto object-contain hover:scale-105 hover:-translate-y-2 transition-transform duration-500 ease-spring"
+          style="height: clamp(200px, 28vw, 300px); filter: drop-shadow(0 24px 40px rgba(0,0,0,0.18)) drop-shadow(0 8px 12px rgba(0,0,0,0.10));" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       HETMAN — mirrored editorial panel
+  ══════════════════════════════════════════════════════════ -->
+  <section class="bg-paper py-0 overflow-hidden">
+
+    <!-- Hetman photo banner -->
+    <div class="relative h-[55vw] min-h-[360px] max-h-[580px]"
+      style="background: url('/Bakgrunner/fa3b213e-da0f-4bdb-b3d3-5c47fa6e1d64.jpg') center / cover no-repeat;">
+      <div class="absolute inset-0"
+        style="background: linear-gradient(to bottom, rgba(13,17,24,0.05) 0%, rgba(13,17,24,0.72) 100%);"></div>
+      <div class="absolute bottom-0 left-0 right-0 px-6 sm:px-10 pb-10 flex items-end justify-between max-w-7xl mx-auto">
+        <div class="reveal">
+          <p class="font-mono text-2xs tracking-caps uppercase text-white/75 mb-3">Ukraine — Zaporozhian Heritage, est. 1782</p>
+          <img src="/Hetman/Logo-hetman.png" alt="Hetman Vodka" class="h-16 w-auto" />
+        </div>
+        <a href={`${base}products#hetman`}
+          class="reveal hidden sm:inline-flex items-center gap-2 text-sm font-medium text-white/85
+                 hover:text-white transition-colors duration-200 group">
+          View range
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" class="transition-transform duration-200 group-hover:translate-x-1">
+            <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Content + bottles — reversed -->
+    <div class="mx-auto max-w-7xl px-6 sm:px-10 py-16 sm:py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+
+      <!-- Bottles — left on desktop -->
+      <div class="order-2 lg:order-1 flex items-end justify-center sm:justify-start gap-2 sm:gap-4 reveal">
+        <img src="/Hetman/Hetman_Premium.png" alt="Hetman Premium"
+          class="w-auto object-contain hover:scale-105 hover:-translate-y-2 transition-transform duration-500 ease-spring"
+          style="height: clamp(230px, 32vw, 340px); filter: drop-shadow(0 24px 40px rgba(0,0,0,0.16)) drop-shadow(0 8px 12px rgba(0,0,0,0.08));" />
+        <img src="/Hetman/Hetman_Ice.png" alt="Hetman Ice"
+          class="w-auto object-contain hover:scale-105 hover:-translate-y-2 transition-transform duration-500 ease-spring"
+          style="height: clamp(200px, 28vw, 300px); filter: drop-shadow(0 24px 40px rgba(0,0,0,0.16)) drop-shadow(0 8px 12px rgba(0,0,0,0.08));" />
+        <img src="/Hetman/Hetman_Ukrainian_Grain.png" alt="Hetman Grain"
+          class="w-auto object-contain hover:scale-105 hover:-translate-y-2 transition-transform duration-500 ease-spring"
+          style="height: clamp(200px, 28vw, 300px); filter: drop-shadow(0 24px 40px rgba(0,0,0,0.16)) drop-shadow(0 8px 12px rgba(0,0,0,0.08));" />
+      </div>
+
+      <!-- Text — right on desktop -->
+      <div class="order-1 lg:order-2 reveal delay-200">
+        <h2 class="font-display text-4xl sm:text-5xl font-semibold text-charcoal leading-display mb-6">
+          An empire<br/>founded in 1782
+        </h2>
+        <p class="text-base text-body leading-body mb-5">
+          Hetman is named after the Hetman — the supreme military and civic commander of the Zaporozhian Cossack
+          state, a title rooted in Ukrainian history since 1782. Produced from Ukrainian grain to premium
+          European export standards, it carries that heritage in every bottle.
+        </p>
+        <p class="text-base text-body leading-body mb-8">
+          Three expressions in the range: the flagship Premium, the frosted Ice,
+          and the Ukrainian Grain vodka.
+        </p>
+        <a href={`${base}products#hetman`}
+          class="inline-flex items-center gap-2 text-sm font-semibold text-blue
+                 hover:text-blue-mid transition-colors duration-200 group
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue rounded-sm">
+          Explore all three expressions
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" class="transition-transform duration-200 group-hover:translate-x-1">
+            <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       CTA — simple, confident
+  ══════════════════════════════════════════════════════════ -->
+  <section class="bg-midnight py-24 sm:py-32 relative overflow-hidden">
+    <!-- Subtle radial light -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full opacity-20 pointer-events-none"
+      style="background: radial-gradient(ellipse at center, #1a5bbf 0%, transparent 70%);"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 flex flex-col md:flex-row md:items-center gap-10 justify-between">
+      <div class="reveal">
+        <span class="rule-blue mb-5 block"></span>
+        <h2 class="font-display text-3xl sm:text-4xl font-semibold text-white leading-display mb-3">
+          Interested in our range?
+        </h2>
+        <p class="text-base text-white/60 max-w-sm">
+          Contact us for pricing, specifications, and minimum order information.
+        </p>
+      </div>
+      <div class="reveal delay-200 shrink-0">
+        <a href={`${base}contact`}
+          class="inline-flex px-10 py-4 bg-blue text-white font-semibold text-sm rounded-sm tracking-wide
+                 hover:bg-blue-mid active:bg-blue-dim transition-colors duration-200
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
