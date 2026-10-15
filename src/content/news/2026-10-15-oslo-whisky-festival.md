@@ -1,6 +1,6 @@
 ---
 title: Aal The Best at Oslo Whisky Festival 2026
-date: 2026-10-14
+date: 2026-10-15
 summary: We will be at Oslo Whisky Festival on 6–7 November at Thon Conference Universitetsgate in Oslo.
 ---
 
