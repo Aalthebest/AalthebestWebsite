@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getNews, formatDate } from '../../lib/news';
+const base = import.meta.env.BASE_URL;
+const posts = await getNews();
+---
+
+<Layout title="News" description="News from Aal The Best — product launches, festivals and tastings.">
+
+  <!-- Hero -->
+  <div class="relative pt-44 pb-24 overflow-hidden"
+    style="background: url('/Bakgrunner/brea.JPG') center 30% / cover no-repeat;">
+    <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(13,17,24,0.38) 0%, rgba(13,17,24,0.68) 100%);"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-6 sm:px-10">
+      <div class="inline-block rounded-sm px-8 py-8 -mx-8"
+        style="backdrop-filter: blur(14px); background: rgba(13,17,24,0.28);">
+        <p class="font-mono text-2xs tracking-caps uppercase text-white/40 mb-5">Aal The Best</p>
+        <h1 class="font-display font-semibold text-white leading-display mb-4"
+          style="font-size: clamp(3rem, 6vw, 6rem);">News</h1>
+        <p class="text-lg text-white/60">Product launches, festivals and tastings</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Posts -->
+  <div class="bg-cream">
+    <div class="mx-auto max-w-4xl px-6 sm:px-10 py-20 sm:py-28">
+      {posts.length === 0 && <p class="text-body">No news yet.</p>}
+      <ul class="divide-y divide-warm-border">
+        {posts.map((post) => (
+          <li class="reveal">
+            <a href={`${base}news/${post.id}`}
+              class="group flex gap-6 sm:gap-8 py-10 rounded-sm
+                     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue">
+              {post.data.image && (
+                <div class="shrink-0 w-20 sm:w-28 flex items-center justify-center rounded-sm bg-paper border border-warm-border">
+                  <img src={post.data.image} alt={post.data.imageAlt ?? ''} class="h-32 sm:h-40 w-auto object-contain py-3" loading="lazy" />
+                </div>
+              )}
+              <div class="flex-1">
+                <p class="font-mono text-2xs tracking-caps uppercase text-muted mb-3">{formatDate(post.data.date)}</p>
+                <h2 class="font-display text-2xl sm:text-3xl font-semibold text-charcoal leading-display mb-3
+                           group-hover:text-blue transition-colors duration-200">{post.data.title}</h2>
+                <p class="text-base text-body leading-body mb-4">{post.data.summary}</p>
+                <span class="text-sm font-medium text-blue">Read more →</span>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+</Layout>
