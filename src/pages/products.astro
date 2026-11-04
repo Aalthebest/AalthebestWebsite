@@ -24,12 +24,14 @@ const glenturret = [
 const glenturretNew = [
   { short: '12 Years Old',                    abv: '46.2%', vol: '70 cl', img: '/Glenturret/Glenturret-12-Year-Old-transparent.png', isNew: true,
     price: 'kr 1 249,00', vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-12-Years-Old/p/21119001',
+    note: 'From 2026, The Glenturret no longer displays the vintage of its core range (Triple Wood, 12 Years Old and 15 Years Old) on the label and box. The 12 Years Old and 15 Years Old released in Norway on 4 November are from the 2026 core range.',
     taste: 'Caramelised citrus fruits with light vanilla and cinnamon. Dried fruits show later, dressed with soft wood spices. Ginger, nutmeg and toasted oak lead to a warm, lingering finish.' },
   { short: '14 Years Old Peat Smoked',        abv: '48%',   vol: '70 cl', img: '/Glenturret/Glenturret-14-Year-Old-Peat-Smoked-transparent.png', isNew: true,
     price: 'kr 1 599,00', vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-14-Years-Old-Peat-Smoked-2024/p/21118901',
     taste: 'Made from a mix of peat smoked and non-peat smoked spirit, matured in first and second fill European oak. Citrus fruit and lemon sponge lead, with a seam of peat smoke following later.' },
   { short: '15 Years Old',                    abv: '46.5%', vol: '70 cl', img: '/Glenturret/Glenturret-15-Year-Old-transparent.png', isNew: true,
     price: 'kr 2 250,00', vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-15-Years-Old/p/21119101',
+    note: 'From 2026, The Glenturret no longer displays the vintage of its core range (Triple Wood, 12 Years Old and 15 Years Old) on the label and box. The 12 Years Old and 15 Years Old released in Norway on 4 November are from the 2026 core range.',
     taste: 'Rich dates, figs and cherries entwine with subtle notes of vanilla. Aged oak presides but retains a youthful vitality. Nutmeg and ginger meet dark fruits and hints of liquorice on a soft, lingering finish.' },
   { short: '20 Years Old',                    abv: '47.6%', vol: '70 cl', img: '/Glenturret/Glenturret-20-Year-Old-transparent.png', isNew: true,
     price: 'kr 7 900,00', vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-20-Years-Old/p/21119201',
@@ -159,6 +161,7 @@ const hetman = [
               <div class="mt-auto pt-5 border-t border-warm-border/60">
                 <p class="font-mono text-2xs tracking-caps uppercase text-muted mb-2">Tasting notes</p>
                 <p class="text-sm text-body leading-relaxed mb-5">{p.taste}</p>
+                {p.note && <p class="text-sm text-body leading-relaxed mb-5">{p.note}</p>}
                 <div class="flex items-center justify-between gap-3 pt-4 border-t border-warm-border/60">
                   <span class="font-sans text-base font-bold text-charcoal tracking-tight whitespace-nowrap">{p.price}</span>
                   <a href={p.vmp} target="_blank" rel="noopener noreferrer"
