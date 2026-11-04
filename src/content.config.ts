@@ -8,7 +8,7 @@ const news = defineCollection({
     title:   z.string(),
     date:    z.coerce.date(),
     summary: z.string(),
-    image:   z.string().optional(),   // path under /public, e.g. /Glenturret/Aberturret_Gin.png
+    image:   z.string().optional(),   // path under /public, e.g. /Glenturret/Aberturret-Gin-transparent.png
     imageAlt: z.string().optional(),
     draft:   z.boolean().default(false),
   }),

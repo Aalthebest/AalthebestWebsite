@@ -2,7 +2,7 @@
 title: The Glenturret at Vinmonopolet from 4 November
 date: 2026-10-15
 summary: The Glenturret core range, together with Remanence and the 20 Year Old, launches at Vinmonopolet on 4 November. Aal The Best AS will also introduce Aberturret Gin in Norway.
-image: /Glenturret/Aberturret_Gin.png
+image: /Glenturret/Aberturret-Gin-transparent.png
 imageAlt: Aberturret Gin bottle
 ---
 
