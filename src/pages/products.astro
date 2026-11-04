@@ -3,37 +3,69 @@ import Layout from '../layouts/Layout.astro';
 const base = import.meta.env.BASE_URL;
 
 const glenturret = [
-  { short: '7 Year Peat Smoked Whisky',       abv: '46%',   vol: '70 cl', img: '/Glenturret/Glenturret_7YO_Peat_Smoked.png',
+  { short: '7 Year Peat Smoked Whisky',       abv: '46%',   vol: '70 cl', img: '/Glenturret/Glenturret-7-Year-Old-Peat-Smoked-transparent.png',
     price: 'kr 991,80',   vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-7-YO-Peat-Smoke-Single-Malt-Whisky-2025/p/19920901',
     taste: 'Sweet vanilla leads to citrus fruits and peat smoke. Ginger and nutmeg follow with glimpses of sea salt and maturing oak, giving way to a lingering, softly peated finish.' },
-  { short: '10 Year Peat Smoked Whisky',      abv: '40.4%', vol: '70 cl', img: '/Glenturret/Glenturret_10YO_Peat_Smoked.png',
+  { short: '10 Year Peat Smoked Whisky',      abv: '40.4%', vol: '70 cl', img: '/Glenturret/Glenturret-10-Year-Old-Peat-Smoked-transparent.png',
     price: 'kr 1 150,80', vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-10-YO-Single-Malt-Scotch-Whisky/p/19921101',
     taste: 'Aromatic dried apple and citrus fruits. Peat smoke mingles with vanilla, sweet fruit and darker smoke, with a hint of brine, giving way to a warm, embracing finish.' },
-  { short: '12 Year Single Malt Whisky',      abv: '40.2%', vol: '70 cl', img: '/Glenturret/Glenturret_12YO.png',
+  { short: '12 Year Single Malt (2025 release)',abv: '40.2%', vol: '70 cl', img: '/Glenturret/Glenturret-12-Year-Old-2025-Release-transparent.png',
     price: 'kr 1 200,80', vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-12-YO-Single-Malt-Scotch-Whisky/p/19921001',
     taste: 'Caramelised citrus fruits with light vanilla and cinnamon, and dried fruits. Soft wood spices, ginger, nutmeg and toasted oak lead to a warm, lingering finish.' },
-  { short: '15 Year Single Malt Whisky',      abv: '40.5%', vol: '70 cl', img: '/Glenturret/Glenturret_15YO.png',
+  { short: '15 Year Single Malt (2025 release)',abv: '40.5%', vol: '70 cl', img: '/Glenturret/Glenturret-15-Year-Old-2025-Release-transparent.png',
     price: 'kr 2 172,00', vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-15-YO-Single-Malt-Scotch-Whisky-2025/p/19921201',
     taste: 'Heather honey and ripening citrus fruits with vanilla and cinnamon. Figs and dates, hints of warm baked fruit cake and dried heather flowers, give way to soft oak.' },
-  { short: 'Triple Wood Single Malt Whisky',  abv: '45%',   vol: '70 cl', img: '/Glenturret/Glenturret_Triple_Wood.png',
+  { short: 'Triple Wood Single Malt Whisky',  abv: '45%',   vol: '70 cl', img: '/Glenturret/Glenturret-Triple-Wood-transparent.png',
     price: 'kr 950,00',   vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-Triple-Wood-Highland-Single-Malt-Scotch-Whisky-2025/p/19921301',
     taste: 'Vanilla and toffee apple, barley sugar with hints of malt and light oak. Cinnamon alongside sticky ginger cake, light fruits and gentle wood spice deliver a soft finish.' },
 ];
 
+// New releases at Vinmonopolet, 4 November 2026 (price/ABV/volume from vinmonopolet.no)
+const glenturretNew = [
+  { short: '12 Years Old',                    abv: '46.2%', vol: '70 cl', img: '/Glenturret/Glenturret-12-Year-Old-transparent.png', isNew: true,
+    price: 'kr 1 249,00', vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-12-Years-Old/p/21119001',
+    taste: 'Caramelised citrus fruits with light vanilla and cinnamon. Dried fruits show later, dressed with soft wood spices. Ginger, nutmeg and toasted oak lead to a warm, lingering finish.' },
+  { short: '14 Years Old Peat Smoked',        abv: '48%',   vol: '70 cl', img: '/Glenturret/Glenturret-14-Year-Old-Peat-Smoked-transparent.png', isNew: true,
+    price: 'kr 1 599,00', vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-14-Years-Old-Peat-Smoked-2024/p/21118901',
+    taste: 'Made from a mix of peat smoked and non-peat smoked spirit, matured in first and second fill European oak. Citrus fruit and lemon sponge lead, with a seam of peat smoke following later.' },
+  { short: '15 Years Old',                    abv: '46.5%', vol: '70 cl', img: '/Glenturret/Glenturret-15-Year-Old-transparent.png', isNew: true,
+    price: 'kr 2 250,00', vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-15-Years-Old/p/21119101',
+    taste: 'Rich dates, figs and cherries entwine with subtle notes of vanilla. Aged oak presides but retains a youthful vitality. Nutmeg and ginger meet dark fruits and hints of liquorice on a soft, lingering finish.' },
+  { short: '20 Years Old',                    abv: '47.6%', vol: '70 cl', img: '/Glenturret/Glenturret-20-Year-Old-transparent.png', isNew: true,
+    price: 'kr 7 900,00', vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-20-Years-Old/p/21119201',
+    taste: 'Pineapple and mango with delicate ginger and a foundation of mature oak. On the palate, tropical fruits intertwine with sweet spices, ending in a subtle, fruit-led finish. Four European oak casks; 1,700 bottles.' },
+  { short: 'Remanence',                       abv: '48.4%', vol: '70 cl', img: '/Glenturret/Glenturret-Remanence-transparent.png', isNew: true,
+    price: 'kr 1 350,00', vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Glenturret-Remanence/p/21118801',
+    taste: 'Peated spirit matured in American and European oak. Smoke with citrus and soft vanilla, then smooth caramel and oak spice. A long finish of gentle smoke and soft spice.' },
+];
+
+const glenturretWhisky = [...glenturretNew, ...glenturret];
+
+const gin = [
+  { short: 'The Aberturret Gin',              abv: '45%',   vol: '70 cl', img: '/Glenturret/Aberturret-Gin-transparent.png', isNew: true,
+    price: 'kr 849,00',   vmp: 'https://www.vinmonopolet.no/Land/Skottland/Highland/The-Aberturret-Gin/p/21119301',
+    taste: 'Juniper to the fore, with lime peel and grapefruit and a clean minerality. A smooth, creamy palate where the malty new make spirit meets citrus zest, chamomile, pine and pink peppercorn, ending with a prickle of lemon sherbet.' },
+];
+
+const glenturretGroups = [
+  { id: 'glenturret-whisky', label: 'Whisky', sub: 'Highland Single Malt Scotch Whisky', items: glenturretWhisky },
+  { id: 'glenturret-gin',    label: 'Gin',    sub: 'London Dry Gin, made with The Glenturret new make spirit', items: gin },
+];
+
 const hetman = [
-  { short: 'Premium',         abv: '40%', vol: '70 cl', img: '/Hetman/Hetman_Premium.png',
+  { short: 'Premium',         abv: '40%', vol: '70 cl', img: '/Hetman/Hetman-Premium-Vodka-transparent.png',
     price: 'kr 706,70', vmp: 'https://www.vinmonopolet.no/Land/Ukraina/Hetman-Premium-Quality-Vodka/p/20156401',
     taste: 'Clean and neutral on the nose with a smooth, rounded texture on the palate. Light cereal notes with a gentle warmth and a short, clean finish.' },
-  { short: 'Ice',             abv: '40%', vol: '70 cl', img: '/Hetman/Hetman_Ice.png',
+  { short: 'Ice',             abv: '40%', vol: '70 cl', img: '/Hetman/Hetman-Ice-Vodka-transparent.png',
     price: 'kr 546,50', vmp: 'https://www.vinmonopolet.no/Land/Ukraina/Hetman-Ice-Vodka/p/20154601',
     taste: 'Very clean and crisp with a characteristically light, fresh character. Minimal sweetness on the palate and a short, clean finish with a faint cooling sensation.' },
-  { short: 'Ukrainian Grain', abv: '40%', vol: '70 cl', img: '/Hetman/Hetman_Ukrainian_Grain.png',
+  { short: 'Ukrainian Grain', abv: '40%', vol: '70 cl', img: '/Hetman/Hetman-Ukrainian-Grain-transparent.png',
     price: 'kr 539,90', vmp: 'https://www.vinmonopolet.no/Land/Ukraina/Hetman-Ukrainian-Grain/p/20154701',
     taste: 'Soft grain character with light, natural sweetness on the nose. Clean and smooth on the palate with gentle cereal notes and a short, even finish.' },
-  { short: 'Gorilka Herbal',  abv: '38%', vol: '50 cl', img: '/Hetman/herbal.png',
+  { short: 'Gorilka Herbal',  abv: '38%', vol: '50 cl', img: '/Hetman/Hetman-Gorilka-Herbal-transparent.png',
     price: 'kr 449,70', vmp: 'https://www.vinmonopolet.no/Land/Ukraina/Hetman-Gorilka-Herbal/p/20724802', blend: true,
     taste: 'Herb-infused Ukrainian gorilka with aromatic botanicals. Warm spice and chamomile on the nose, a rounded herbal character on the palate, with a natural, gently bitter finish.' },
-  { short: 'Gorilka Citrus',  abv: '38%', vol: '50 cl', img: '/Hetman/citrus.png',
+  { short: 'Gorilka Citrus',  abv: '38%', vol: '50 cl', img: '/Hetman/Hetman-Gorilka-Citrus-transparent.png',
     price: 'kr 449,70', vmp: 'https://www.vinmonopolet.no/Land/Ukraina/Hetman-Gorilka-Citrus/p/20699302', blend: true,
     taste: 'Citrus-infused Ukrainian gorilka with fresh lemon and orange character. Bright and clean on the palate with natural citrus sweetness and a crisp, refreshing finish.' },
 ];
@@ -54,7 +86,7 @@ const hetman = [
           Our Spirits<br/><em class="font-light italic text-amber-light">Portfolio</em>
         </h1>
         <p class="text-lg text-white/60 max-w-xl leading-body">
-          Ten expressions across two brands and two countries.
+          Whisky, gin and vodka across two brands and two countries.
           Tasting notes sourced directly from the producers.
         </p>
       </div>
@@ -75,19 +107,39 @@ const hetman = [
           <img src="/Glenturret/Glenturret_Header_logo.svg" alt="The Glenturret"
             class="h-20 w-auto shrink-0" />
           <p class="text-base text-body leading-body">
-            Highland Single Malt Scotch Whisky — five expressions from Scotland's oldest working distillery.
+            Highland Single Malt Scotch Whisky and Scottish gin from Scotland's oldest working distillery.
           </p>
         </div>
+        <nav class="flex gap-3 mt-8" aria-label="Glenturret categories">
+          {glenturretGroups.map((g) => (
+            <a href={`#${g.id}`}
+              class="font-mono text-2xs tracking-caps uppercase text-charcoal border border-warm-border px-4 py-2 rounded-sm hover:bg-warm transition-colors duration-150">
+              {g.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+
+      {glenturretGroups.map((g, gi) => (
+      <div id={g.id} class={`scroll-mt-28 ${gi > 0 ? 'mt-20' : ''}`}>
+      <div class="flex items-baseline gap-4 mb-8 reveal">
+        <h2 class="font-display text-3xl font-semibold text-charcoal">{g.label}</h2>
+        <p class="font-mono text-2xs tracking-wide uppercase text-muted">{g.sub}</p>
       </div>
 
       <!-- Bottle grid — 3 per row -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {glenturret.map((p, i) => (
-          <article class={`group bg-paper border border-warm-border rounded-sm overflow-hidden hover:shadow-card-up transition-all duration-400 flex flex-col reveal delay-${i * 100}`}>
+        {g.items.map((p, i) => (
+          <article class={`group bg-paper border border-warm-border rounded-sm overflow-hidden hover:shadow-card-up transition-all duration-400 flex flex-col reveal delay-${(i % 3) * 100}`}>
 
             <!-- Bottle -->
             <div class="flex items-end justify-center px-8 pt-12 pb-0 bg-warm relative overflow-hidden"
               style="min-height: 340px;">
+              {p.isNew && (
+                <span class="absolute top-4 left-4 z-20 font-mono text-2xs tracking-caps uppercase text-white bg-blue px-2.5 py-1 rounded-sm">
+                  New release
+                </span>
+              )}
               <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-28 h-28 rounded-full opacity-30 pointer-events-none"
                 style="background: radial-gradient(circle, #c4862c55, transparent 70%); filter: blur(22px);"></div>
               <img src={p.img} alt={p.short}
@@ -125,6 +177,8 @@ const hetman = [
           </article>
         ))}
       </div>
+      </div>
+      ))}
 
     </div>
   </section>
